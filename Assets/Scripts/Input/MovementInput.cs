@@ -17,8 +17,8 @@ public class MovementInput : MonoBehaviour {
     {
         var direction = Vector2.zero;
 
-        direction.x = Input.GetAxis("Horizontal");
-        direction.y = Input.GetAxis("Vertical");
+        direction.x = Input.GetAxisRaw("Horizontal");
+        direction.y = Input.GetAxisRaw("Vertical");
 
         _movement.Move(direction, false);
     }
