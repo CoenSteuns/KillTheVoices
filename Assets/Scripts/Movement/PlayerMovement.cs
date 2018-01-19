@@ -21,6 +21,8 @@ public class PlayerMovement : MonoBehaviour {
         if (UseDeltatime)
             velocity *= Time.deltaTime;
 
-        _rb.position += velocity;
+        
+
+        _rb.AddForce(velocity, ForceMode2D.Force);
     }
 }
