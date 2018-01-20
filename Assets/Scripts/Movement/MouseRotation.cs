@@ -12,6 +12,10 @@ public class MouseRotation : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
         var cursorpoint = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        
         transform.LookAt(cursorpoint, Vector3.forward);
+
+        transform.eulerAngles = new Vector3(0, 0, -transform.eulerAngles.z);
+
 	}
 }
