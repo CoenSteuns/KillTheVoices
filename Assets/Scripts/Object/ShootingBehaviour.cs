@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-public class EnemyBehaviour : MonoBehaviour
+public class ShootingBehaviour : MonoBehaviour
 {
 	[SerializeField] private float _shootDelay = 2;
 	[SerializeField] private GameObject _bullet;
@@ -20,7 +20,7 @@ public class EnemyBehaviour : MonoBehaviour
 	}
 
 	//Only shoot when a certain amount of time has passed
-	private void Shoot()
+	public void Shoot()
 	{
 		if (_shootTime > Time.fixedTime) return;
 		_gunShoot.SpawnObject(_bullet, _muzzle);
