@@ -13,10 +13,10 @@ public class ShootingBehaviour : MonoBehaviour
 	{
 		_gunShoot = GameObject.FindGameObjectWithTag(_tag).GetComponent<Spawn>();
 	}
-	
+
 	private void Update()
 	{
-		Shoot();
+		if(gameObject.CompareTag("Enemy")) Shoot();
 	}
 
 	//Only shoot when a certain amount of time has passed

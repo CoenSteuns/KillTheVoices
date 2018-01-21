@@ -4,8 +4,8 @@ public class PlayerShooting : MonoBehaviour
 {
 	[SerializeField] private ShootingBehaviour _gun;
 	
-	private  void OnMouseDown()
+	private void Update()
 	{
-		_gun.Shoot();
+		if(Input.GetMouseButtonDown(0)) _gun.Shoot();
 	}
 }
