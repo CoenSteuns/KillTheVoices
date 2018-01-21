@@ -4,6 +4,7 @@ public class EnemyBehaviour : MonoBehaviour
 {
 	[SerializeField] private float _shootDelay = 2;
 	[SerializeField] private GameObject _bullet;
+	[SerializeField] private Transform _muzzle;
 	[SerializeField] private string _tag;
 	private Spawn _gunShoot;
 	private float _shootTime;
@@ -22,7 +23,7 @@ public class EnemyBehaviour : MonoBehaviour
 	private void Shoot()
 	{
 		if (_shootTime > Time.fixedTime) return;
-		_gunShoot.SpawnObject(_bullet, transform);
+		_gunShoot.SpawnObject(_bullet, _muzzle);
 		_shootTime = Time.fixedTime + _shootDelay;
 	}
 }

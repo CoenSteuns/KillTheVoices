@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-public class ObjectPersue : MonoBehaviour
+public class ObjectPursue : MonoBehaviour
 {
 	[SerializeField] private float _maxSpeed = 3;
 	[SerializeField] private float _keptDistance;
@@ -30,10 +30,10 @@ public class ObjectPersue : MonoBehaviour
   
 	private void Update() 
 	{
-        Persue();
+        Pursue();
     }
 
-	private void Persue() 
+	private void Pursue() 
 	{   
 		//check distance from target
 		var distance = (Vector2)_target.position - _objectPosition;

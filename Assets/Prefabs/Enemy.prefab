@@ -22,8 +22,9 @@ GameObject:
   - component: {fileID: 212140134251910768}
   - component: {fileID: 114204372171490820}
   - component: {fileID: 114621663164037724}
+  - component: {fileID: 114816429949216170}
   - component: {fileID: 50608197566785388}
-  - component: {fileID: 70083569873689452}
+  - component: {fileID: 61639219376071120}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Untagged
@@ -64,8 +65,8 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!70 &70083569873689452
-CapsuleCollider2D:
+--- !u!61 &61639219376071120
+BoxCollider2D:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
@@ -77,8 +78,18 @@ CapsuleCollider2D:
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0.049999997, y: 0.049999997, z: 0.049999997, w: 0.049999997}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 0.16, y: 0.16}
+    newSize: {x: 0.16, y: 0.16}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
   m_Size: {x: 0.16, y: 0.16}
-  m_Direction: 0
+  m_EdgeRadius: 0
 --- !u!114 &114204372171490820
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -92,6 +103,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _maxSpeed: 3
   _keptDistance: 3
+  _allowRotation: 1
   _targetTag: Player
 --- !u!114 &114621663164037724
 MonoBehaviour:
@@ -104,9 +116,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9ace7c24193661f43ab8fa036b263ae2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _gunShoot: {fileID: 0}
   _shootDelay: 2
   _bullet: {fileID: 1436291577498082, guid: 9e48d9ac919d2ae40903311e238a0129, type: 2}
+  _tag: Spawner
+--- !u!114 &114816429949216170
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1980880917258722}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1f58e72b189afa24187cef83b4dbb854, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _health: 1
+  _maxHealth: 1
+  _allowRegen: 0
+  _playerTag: Player
 --- !u!212 &212140134251910768
 SpriteRenderer:
   m_ObjectHideFlags: 1
