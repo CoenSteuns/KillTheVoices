@@ -2,22 +2,21 @@
 
 public class EnemyBehaviour : MonoBehaviour
 {
-	//[SerializeField] private Transform _target;
-	[SerializeField] private Shoot _gunShoot;
+	[SerializeField] private Spawn _gunShoot;
 	[SerializeField] private float _shootDelay = 2;
+	[SerializeField] private GameObject _bullet;
 	private float _shootTime;
-	
 
 	private void Update()
 	{
 		Shoot();
 	}
 
+	//Only shoot when a certain amount of time has passed
 	private void Shoot()
 	{
-		print(_shootTime + " " + Time.fixedTime);
 		if (_shootTime > Time.fixedTime) return;
-		_gunShoot.SpawnBullet(transform);
+		_gunShoot.SpawnObject(_bullet, transform);
 		_shootTime = Time.fixedTime + _shootDelay;
 	}
 }

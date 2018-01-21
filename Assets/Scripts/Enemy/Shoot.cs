@@ -1,12 +1,10 @@
 ﻿using UnityEngine;
 
-public class Shoot : MonoBehaviour
+public class Spawn : MonoBehaviour
 {
-	[SerializeField] private GameObject _bullet;
-	
-	public void SpawnBullet (Transform startPoint)
+	//Instantiate the given entity at the given location
+	public void SpawnObject (GameObject entity, Transform startPoint)
 	{
-		Instantiate(_bullet, startPoint.position, Quaternion.identity);
+		Instantiate(entity, startPoint.position, Quaternion.identity);
 	}
-	
 }
