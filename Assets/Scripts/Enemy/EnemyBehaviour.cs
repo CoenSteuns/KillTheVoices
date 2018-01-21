@@ -2,11 +2,17 @@
 
 public class EnemyBehaviour : MonoBehaviour
 {
-	[SerializeField] private Spawn _gunShoot;
 	[SerializeField] private float _shootDelay = 2;
 	[SerializeField] private GameObject _bullet;
+	[SerializeField] private string _tag;
+	private Spawn _gunShoot;
 	private float _shootTime;
 
+	private void Start()
+	{
+		_gunShoot = GameObject.FindGameObjectWithTag(_tag).GetComponent<Spawn>();
+	}
+	
 	private void Update()
 	{
 		Shoot();

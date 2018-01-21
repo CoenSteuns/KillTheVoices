@@ -80,6 +80,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _maxSpeed: 8
   _keptDistance: 0
+  _allowRotation: 0
   _targetTag: Player
 --- !u!212 &212838508817555590
 SpriteRenderer:
