@@ -36,6 +36,7 @@ public class ObjectPursue : MonoBehaviour
 	private void Pursue() 
 	{   
 		//check distance from target
+		if(_target == null) return;
 		var distance = (Vector2)_target.position - _objectPosition;
 		if(distance.magnitude < _keptDistance) return;
 		

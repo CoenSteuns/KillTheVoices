@@ -29,13 +29,15 @@ public class Health : MonoBehaviour
 
 	private void CheckLives()
 	{
-		if (_health >= 0) return;
-		Invoke("DestroyEntity", 3);
-	}
-
-	private void DestroyEntity()
-	{
-		if (gameObject.CompareTag(_playerTag)) SceneManager.LoadScene(0);
-		else Destroy(gameObject);
+		if (gameObject.CompareTag(_playerTag))
+		{
+			if (_health >= 0) return;
+			SceneManager.LoadScene(0);
+		}
+		else
+		{
+			GameObject.FindGameObjectWithTag("stats").GetComponent<DeathManager>().EnemyDeath();
+			Destroy(gameObject);
+		}
 	}
 }

@@ -7,6 +7,7 @@ TagManager:
   - Projectile
   - Spawner
   - Enemy
+  - stats
   layers:
   - Default
   - TransparentFX
